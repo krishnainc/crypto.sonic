@@ -1,0 +1,17 @@
+// Exercise 1
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+ cout<<"University:\tUniversity Teknikal Malaysia ,Melaka" <<endl;
+ cout<<"Faculty:\tFTMK"<<endl;
+ cout<<"Programme:\tBITI"<<endl;
+ 
+ cout<<"My name is Muhammad Zaid Aqil Bin Waheed Rahman.I am from Penang, Malaysia.";
+ 
+ 
+ return 0;
+}
+
