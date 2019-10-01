@@ -1,0 +1,12 @@
+// Exercise 2b
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    cout<<"10\n9\n8\n7\t    *\n6 *\n5\t\t    *\n4   *\n3\t\t*\n2     *\n1 *\n0 1 2 3 4 5 6 7 8 9 10";
+    
+    return 0;
+  
+}
