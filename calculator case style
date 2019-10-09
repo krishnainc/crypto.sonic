@@ -1,0 +1,103 @@
+#include "stdafx.h"
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	//declare all the variables that is to be used
+  
+	int masuk1, masuk2, jawapan;
+	char choice;
+  
+
+	{
+		//display all the choices that are available at the first place
+    
+		cout << "1.Addition\n";
+		cout << "2.Subtraction\n";
+		cout << "3.Multiplication\n";
+		cout << "4.Division\n";
+		cout << "Enter Your Choice With a Smile :";
+    
+
+		//input the choice user desired
+    
+		cin >> choice;
+    
+
+		//position the choices using switch case method
+    
+		switch (choice)
+
+		{
+    
+
+			//do addition placement for the first case
+      
+		case '1':
+			cout << "Enter First Number :" ;
+			cin >> masuk1;
+			cout << "Enter Second Number :";
+			cin >> masuk2;
+			jawapan = masuk1 + masuk2;
+			cout << "Your Answer is :" << jawapan << endl;
+			break;
+
+
+			//do subtraction for the second case
+      
+		case '2':
+			cout << "Enter First Number :" ;
+			cin >> masuk1;
+			cout << "Enter Second Number :" ;
+			cin >> masuk2;
+			jawapan = masuk1 - masuk2;
+			cout << "Your Answer is :" << jawapan << endl;
+			break;
+
+
+			//do multiplication for the third case
+      
+		case '3':
+			cout << "Enter First Number :" ;
+			cin >> masuk1;
+			cout << "Enter Second Number :" ;
+			cin >> masuk2;
+			jawapan = masuk1 * masuk2;
+			cout << "Your Answer is :" << jawapan << endl;
+			break;
+
+
+			//do division for the forth case
+      
+		case '4':
+			cout << "Enter First Number :" ;
+			cin >> masuk1;
+			cout << "Enter Second Number :" ;
+			cin >> masuk2;
+			jawapan = masuk1 / masuk2;
+			cout << "Your Answer is :" << jawapan << endl;
+			break;
+
+
+			//if any other choices besides those 4 above is input...this will be displayed
+      
+		default:
+			cout << "There is only 4 option available ...\nIf you want more choice please use your Calculator ...\nWe are very sorry for you inconvenience ...\nHave a great day Ahead" << endl;
+
+
+		}
+
+
+		//int method requires a return value
+    
+		return 0;
+
+
+	}
+
+}
+
+
