@@ -1,0 +1,32 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int i;
+	int room;
+	int occ;
+	int floor;
+	double perc;
+	int sum = 0;
+	int sum1 = 0;
+	cout << "How many floors the Hotel has? :\n";
+	cin >> floor;
+	for (i = 1; i <= floor; i++) {
+		cout << "How many rooms on the floor? :\n";
+		cin >> room;
+		sum = sum + room;
+		cout << "How many rooms are occupied? :\n";
+		cin >> occ;
+		sum1 = sum1 + occ;
+		 
+
+	}
+	cout << sum << "\trooms are available\n";
+	cout << sum1 << "\trooms are occupied\n";
+	cout << sum - sum1 << "\trooms are unoccupied\n";
+	cout << "The percentage of room occupancy is :\n" << ((double)sum1 / (double)sum * (double)100);
+    return 0;
+}
