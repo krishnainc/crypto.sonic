@@ -27,7 +27,7 @@ int main()
 		printf("do you wanna continue?");
 			cin >> c;
 		
-	} while (c == 'y' || 'Y');
+	} while (c == 'y' || c == 'Y');
 
 
 
