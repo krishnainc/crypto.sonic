@@ -1,0 +1,17 @@
+#include "stdafx.h"
+
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	string e = "RAM";
+
+	
+	reverse(e.begin(), e.end());
+
+	cout << e;
+	return 0;
+}
