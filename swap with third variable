@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+void swap(int, int);
+
+int main()
+{
+	int x = 2;
+	int y = 4;
+	cout << "original value :" << x << y;
+	
+	swap(x, y);
+
+    
+}
+
+void swap(int x, int  y) 
+{
+	int b = x;
+	 x = y;
+	 y = b;
+	cout << "Value after swap is" << x << y;
+	
+
+	
+}
+
+
