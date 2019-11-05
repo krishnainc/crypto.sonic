@@ -1,0 +1,65 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int a;
+int b;
+int c;
+int d;
+int e;
+
+void getScore(int score) {
+	if (score > 0 && score < 101) {
+		cout << "Valid Number\n";
+	}
+	else {
+		cout << "Invalid Number\n";
+	}
+}
+
+int findLowest() {
+	int array[5];
+	int i;
+	int lowest = 101;
+	cout << "Enter the test scores again :\n";
+	for (i = 0; i < 5; i++) {
+		cin >> array[i];
+	}
+	for (i = 0; i < 5; i++) {
+		if (array[i] < lowest)
+			lowest = array[i];
+	}
+	cout << "The lowest number is :" << lowest << endl;
+	return lowest;
+}
+
+int calcAverage(double average) {
+	average = a + b + c + d + e;
+	double d = findLowest();
+	double gg = (average - d) / 4;
+	cout << "Average of 4 highest number is :" << gg;
+	return gg;
+}
+
+int main()
+{
+	cout << "Enter test scores :\n";
+	cin >> a;
+	getScore(a);
+	cin >> b;
+	getScore(b);
+	cin >> c;
+	getScore(c);
+	cin >> d;
+	getScore(d);
+	cin >> e;
+	getScore(e);
+
+	
+
+	int sum = a + b + c + d + e;
+	calcAverage(sum);
+
+	
+
+}
