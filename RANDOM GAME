@@ -1,0 +1,41 @@
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+void toss() {
+
+	char masuk;
+
+	cout << "Enter H or T :\n";
+
+	cin >> masuk;
+
+	if (masuk = 'H') {
+		masuk = 1;
+	}
+
+	if (masuk = 'T') {
+		masuk = 0;
+	}
+	  
+	srand(time(0));
+      int r = (rand() % 2);
+
+	  if (masuk = r){
+		  cout << "You Win !!\n";}
+	  else {
+		  cout << "You Lost !!\n";
+	  }
+	
+	
+	
+}
+int main()
+{
+
+	toss();
+	return 0;
+}
+
