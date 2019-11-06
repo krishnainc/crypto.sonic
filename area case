@@ -1,0 +1,89 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+
+
+int main()
+{
+	double radius, Area1, Area2, Area3, length1, width2, length2, height1;
+	char masuk;
+	
+		cout << "1. Calculate the Area of a Circle\n";
+		cout << "2. Calculate the Area of a Rectangle\n";
+		cout << "3. Calculate the Area of a Triangle\n";
+		cout << "4. Quit\n";
+		cout << "Enter your choice with a wide smile :\n";
+		cin >> masuk;
+
+		switch (masuk) {
+
+		case '1':
+			
+			cout << "Enter the radius of Circle :";
+			cin >> radius;
+			if (radius < 0) {
+				cout << "Please enter a Positive Number :";
+				cin >> radius;
+				Area1 = 3.14159*radius*radius;
+				cout << "Area of Circle is :" << Area1;
+			}
+			
+			else {
+				Area1 = 3.14159*radius*radius;
+				cout << "Area of Circle is :" << Area1;
+			}
+
+			break;
+
+		case '2':
+			
+			cout << "Enter Length :";
+			cin >> length2;
+			if (length2 < 0) {
+				cout << "enter positive number :";
+				cin >> length2;
+			}
+			cout << "Enter Width :";
+			cin >> width2;
+			if (width2 < 0) {
+				cout << "enter positive number :";
+				cin >> width2;
+			}
+			 Area2 = length2*width2;
+			cout << "Area of Rectangle is :" << Area2;
+
+			break;
+
+		case '3':
+			
+			cout << "Enter the length of Triangle's base :";
+			cin >> length1;
+			if (length1 < 0) {
+				cout << "enter positive number :";
+				cin >> length1;
+			}
+			cout << "Enter the height :";
+			cin >> height1;
+			if (height1 < 0) {
+				cout << "enter positive number :";
+				cin >> height1;
+			}
+			 Area3 = 0.5*length1*height1;
+			cout << "Area of Triangle is :" << Area3;
+
+			break;
+
+		case '4':
+			cout << "***************Thanks for your time...Have a good day********************";
+
+			break;
+
+		default:
+			cout << "ONLY THESE CHOICES ARE AVAILABLE";
+		}
+
+		return 0;
+	}
+
+
