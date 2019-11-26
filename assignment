@@ -10,13 +10,25 @@ using namespace std;
 int main()
 {
 	char insid[7];
+	char coursenum[5];
+	char str[30];
 	char a1, a2, a3, a4, a5;
 	int i;
 	int g1, g2, g3, g4, g5;
+	char lines[40];
+	int count = 0;
+	double q1 ;
+	double q2;
+	double q3 ;
+	double q4 ;
+	double q5 ;
 
-	ifstream inputfile("Text.txt", ios::in);
-	ofstream outputfile("Text1.txt");
+	double insresult;
 
+	ifstream inputfile("masuk.txt", ios::in);
+	ofstream outputfile("keluar.txt",ios::out);
+
+	
 	if (!inputfile)
 	{
 		cerr << "File could not be opened\n";
@@ -29,9 +41,9 @@ int main()
 		exit(1);
 	}
 
-	while (inputfile >> insid >> a1 >> a2 >> a3 >> a4 >> a5 )
-	{
-		outputfile << "COURSE/INSTRUCTOR EVALUATION SUMMARY" << endl<<endl;
+	inputfile >> insid >> coursenum >> a1 >> a2 >> a3 >> a4 >> a5;
+	
+		
 
 		if (a1 == 'E')
 			g1 = 4;
@@ -93,18 +105,33 @@ int main()
 			g5 = 0;
 
 
-		double q1 = g1 / 10;
-		double q2 = g2 / 10;
-			g3/10 
-			g4 /10
-			g5 / 5;
-		double insresult = sum / 10 * 0.05;
+		 q1 = g1 / 10.0;
+		 q2 = g2 / 10.0;
+		 q3 = g3 / 10.0;
+		 q4 = g4 / 10.0;
+		 q5 = g5 / 10.0;
 
-		outputfile << " " << "number of correct answer :" << sum << endl;
-		outputfile << "result :" << result;
-		outputfile << endl;
-	}
+		 insresult = 0.15*q1 + 0.23*q2 + 0.08*q3 + 0.32*q4 + 0.22*q5;
 
+		 while (!inputfile.eof()) {
+			 inputfile.getline(str, 40);
+			 count++;
+		 }
+	
+	
+		outputfile << "COURSE/INSTRUCTOR EVALUATION SUMMARY" << endl << endl;
+
+		outputfile << "INSTRUCTOR NUMBER :" << insid << endl;
+		outputfile << "COURSE NUMBER :" << coursenum << endl;
+		outputfile << "NUMBER OF PARTICIPANTS :" << count<<endl<<endl;
+		outputfile << "AVERAGES :" << endl << endl;
+		outputfile << "QUESTION 1 :" << q1 << endl;
+		outputfile << "QUESTION 2 :" << q2 << endl;
+		outputfile << "QUESTION 3 :" << q3 << endl;
+		outputfile << "QUESTION 4 :" << q4 << endl;
+		outputfile << "QUESTION 5 :" << q5 << endl << endl;
+		outputfile << "INSTRUCTOR AVERAGE :" << insresult << endl;
+	
 
 	return 0;
 }
