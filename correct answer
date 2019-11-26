@@ -1,0 +1,96 @@
+#include "stdafx.h"
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <iomanip>
+
+using namespace std;
+
+
+int main()
+{
+	char id[5];
+	char a1, a2, a3, a4, a5, a6, a7, a8, a9, a10;
+	int i;
+	int g1, g2, g3, g4, g5, g6, g7, g8, g9, g10;
+
+	ifstream inputfile("Text.txt", ios::in);
+	ofstream outputfile("Text1.txt");
+
+	if (!inputfile)
+	{
+		cerr << "File could not be opened\n";
+		exit(1);
+	}
+
+	if (!outputfile)
+	{
+		cerr << "File could not be opened\n";
+		exit(1);
+	}
+
+	while (inputfile >> id >> a1 >> a2 >> a3 >> a4 >> a5 >> a6 >> a7 >> a8 >> a9 >> a10)
+	{
+		outputfile << id << " " << endl;
+		
+			if (a1 == 'A')
+				g1 = 1;
+			else
+				g1 = 0;
+
+			if (a2 == 'C')
+				 g2 = 1;
+			else
+				g2= 0;
+
+			if (a3 == 'D')
+				 g3 = 1;
+			else
+				g3= 0;
+
+			if (a4 == 'A')
+				 g4 = 1;
+			else
+				g4= 0;
+
+			if (a5 == 'A')
+				 g5 = 1;
+			else
+				g5= 0;
+
+			if (a6 == 'B')
+				 g6 = 1;
+			else
+				g6= 0;
+
+			if (a7 == 'B')
+				 g7 = 1;
+			else
+				g7 = 0;
+
+			if (a8 == 'D')
+				 g8 = 1;
+			else
+				g8= 0;
+
+			if (a9 == 'C')
+				 g9 = 1;
+			else
+				g9= 0;
+
+			if (a10 == 'D')
+				 g10 = 1;
+			else
+				g10= 0;
+
+			double sum = g1 + g2 + g3 + g4 + g5 + g6 + g7 + g8 + g9 + g10;
+			double result= sum/10*0.05;
+
+			outputfile << " " << "number of correct answer :" << sum << endl;
+				outputfile << "result :" << result;
+			outputfile << endl;
+	}
+	
+
+    return 0;
+}
