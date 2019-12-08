@@ -1,0 +1,1382 @@
+// ConsoleApplication17.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include <windows.h>
+#include <iomanip>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+
+using namespace std;
+
+
+//function to count the number of participants using end of line method
+int liness()
+{
+ifstream inputfile("uk.txt", ios::in);
+char lines[30];
+int count = 0;
+while (!inputfile.eof()) {
+	inputfile.getline(lines, 40);
+	count++;}
+return count;
+}
+
+void main()
+{
+	//all the needed variables to designate the number it holds for each student based on the question coordinates in array
+	double q, w, e, r, t, y, u, i, o, p, a, s, d, f, g, h, j, k, l, z;
+	double x, c, v, b, n, m, qq, ww, ee, rr, tt, yy, uu, ii, oo, pp, aa, ss, dd, ff;
+	double gg, hh, jj, kk, ll, zz, xx, cc, vv, bb, nn, mm, qqq, www, eee, rrr, ttt, yyy, uuu, iii;
+	double ooo, ppp, aaa, sss, ddd, fff, ggg, hhh, jjj, kkk, lll, zzz, xxx, ccc, vvv, bbb, nnn, mmm, qqqq, wwww;
+	double eeee, rrrr, tttt, yyyy, uuuu, iiii, oooo, pppp, aaaa, ssss, dddd, ffff, gggg, hhhh, jjjj, kkkk, llll, zzzz, xxxx, cccc;
+	
+
+	//struct is used as the array used contains multiple data types
+	struct student {
+		int insid;
+		int course;
+		char a1, a2, a3, a4, a5;
+	};
+
+	
+	//declare the input and output file
+	ifstream inputfile("uk.txt", ios::in);
+	ofstream outputfile("k.txt", ios::out);
+
+	
+	//error message in case file could not open
+	if (!inputfile)
+	{
+		cerr << "File could not be opened\n";
+		exit(1);
+	}
+
+	if (!outputfile)
+	{
+		cerr << "File could not be opened\n";
+		exit(1);
+	}
+	
+
+
+	//declare the arrays that contain data of 20 students
+	struct student s1[20];
+	struct student s2[20];
+	struct student s3[20];
+	struct student s4[20];
+	struct student s5[20];
+
+	struct student s6[20];
+	struct student s7[20];
+	struct student s8[20];
+	struct student s9[20];
+	struct student s10[20];
+
+	struct student s11[20];
+	struct student s12[20];
+	struct student s13[20];
+	struct student s14[20];
+	struct student s15[20];
+
+	struct student s16[20];
+	struct student s17[20];
+	struct student s18[20];
+	struct student s19[20];
+	struct student s20[20];
+
+	//declare the text data in input file separately for each student
+	inputfile >> s1[20].insid >> s1[20].course >> s1[20].a1 >> s1[20].a2 >> s1[20].a3 >> s1[20].a4 >> s1[20].a5;
+	inputfile >> s2[20].insid >> s2[20].course >> s2[20].a1 >> s2[20].a2 >> s2[20].a3 >> s2[20].a4 >> s2[20].a5;
+	inputfile >> s3[20].insid >> s3[20].course >> s3[20].a1 >> s3[20].a2 >> s3[20].a3 >> s3[20].a4 >> s3[20].a5;
+	inputfile >> s4[20].insid >> s4[20].course >> s4[20].a1 >> s4[20].a2 >> s4[20].a3 >> s4[20].a4 >> s4[20].a5;
+	inputfile >> s5[20].insid >> s5[20].course >> s5[20].a1 >> s5[20].a2 >> s5[20].a3 >> s5[20].a4 >> s5[20].a5;
+
+
+	inputfile >> s6[20].insid >> s6[20].course >> s6[20].a1 >> s6[20].a2 >> s6[20].a3 >> s6[20].a4 >> s6[20].a5;
+	inputfile >> s7[20].insid >> s7[20].course >> s7[20].a1 >> s7[20].a2 >> s7[20].a3 >> s7[20].a4 >> s7[20].a5;
+	inputfile >> s8[20].insid >> s8[20].course >> s8[20].a1 >> s8[20].a2 >> s8[20].a3 >> s8[20].a4 >> s8[20].a5;
+	inputfile >> s9[20].insid >> s9[20].course >> s9[20].a1 >> s9[20].a2 >> s9[20].a3 >> s9[20].a4 >> s9[20].a5;
+	inputfile >> s10[20].insid >> s10[20].course >> s10[20].a1 >> s10[20].a2 >> s10[20].a3 >> s10[20].a4 >> s10[20].a5;
+
+
+	inputfile >> s11[20].insid >> s11[20].course >> s11[20].a1 >> s11[20].a2 >> s11[20].a3 >> s11[20].a4 >> s11[20].a5;
+	inputfile >> s12[20].insid >> s12[20].course >> s12[20].a1 >> s12[20].a2 >> s12[20].a3 >> s12[20].a4 >> s12[20].a5;
+	inputfile >> s13[20].insid >> s13[20].course >> s13[20].a1 >> s13[20].a2 >> s13[20].a3 >> s13[20].a4 >> s13[20].a5;
+	inputfile >> s14[20].insid >> s14[20].course >> s14[20].a1 >> s14[20].a2 >> s14[20].a3 >> s14[20].a4 >> s14[20].a5;
+	inputfile >> s15[20].insid >> s15[20].course >> s15[20].a1 >> s15[20].a2 >> s15[20].a3 >> s15[20].a4 >> s15[20].a5;
+
+
+	inputfile >> s16[20].insid >> s16[20].course >> s16[20].a1 >> s16[20].a2 >> s16[20].a3 >> s16[20].a4 >> s16[20].a5;
+	inputfile >> s17[20].insid >> s17[20].course >> s17[20].a1 >> s17[20].a2 >> s17[20].a3 >> s17[20].a4 >> s17[20].a5;
+	inputfile >> s18[20].insid >> s18[20].course >> s18[20].a1 >> s18[20].a2 >> s18[20].a3 >> s18[20].a4 >> s18[20].a5;
+	inputfile >> s19[20].insid >> s19[20].course >> s19[20].a1 >> s19[20].a2 >> s19[20].a3 >> s19[20].a4 >> s19[20].a5;
+	inputfile >> s20[20].insid >> s20[20].course >> s20[20].a1 >> s20[20].a2 >> s20[20].a3 >> s20[20].a4 >> s20[20].a5;
+
+
+
+	//selection of character and store it in integer variable
+
+	//QUESTION 1
+		if (s1[20].a1 == 'E')
+			q = 4;
+		else if (s1[20].a1 == 'G')
+			q = 3;
+		else if (s1[20].a1 == 'A')
+			q = 2;
+		else if (s1[20].a1 == 'P')
+			q = 1;
+		else if (s1[20].a1 == 'U')
+			q = 0;
+
+		if (s2[20].a1 == 'E')
+			w = 4;
+		else if (s2[20].a1 == 'G')
+			w = 3;
+		else if (s2[20].a1 == 'A')
+			w = 2;
+		else if (s2[20].a1 == 'P')
+			w = 1;
+		else if (s2[20].a1 == 'U')
+			w = 0;
+
+		if (s3[20].a1 == 'E')
+			e = 4;
+		else if (s3[20].a1 == 'G')
+			e = 3;
+		else if (s3[20].a1 == 'A')
+			e = 2;
+		else if (s3[20].a1 == 'P')
+			e = 1;
+		else if (s3[20].a1 == 'U')
+			e = 0;
+
+		if (s4[20].a1 == 'E')
+			r = 4;
+		else if (s4[20].a1 == 'G')
+			r = 3;
+		else if (s4[20].a1 == 'A')
+			r = 2;
+		else if (s4[20].a1 == 'P')
+			r = 1;
+		else if (s4[20].a1 == 'U')
+			r = 0;
+
+		if (s5[20].a1 == 'E')
+			t = 4;
+		else if (s5[20].a1 == 'G')
+			t = 3;
+		else if (s5[20].a1 == 'A')
+			t = 2;
+		else if (s5[20].a1 == 'P')
+			t = 1;
+		else if (s5[20].a1 == 'U')
+			t = 0;
+
+		if (s6[20].a1 == 'E')
+			y = 4;
+		else if (s6[20].a1 == 'G')
+			y = 3;
+		else if (s6[20].a1 == 'A')
+			y = 2;
+		else if (s6[20].a1 == 'P')
+			y = 1;
+		else if (s6[20].a1 == 'U')
+			y = 0;
+
+		if (s7[20].a1 == 'E')
+			u = 4;
+		else if (s7[20].a1 == 'G')
+			u = 3;
+		else if (s7[20].a1 == 'A')
+			u = 2;
+		else if (s7[20].a1 == 'P')
+			u = 1;
+		else if (s7[20].a1 == 'U')
+			u = 0;
+
+		if (s8[20].a1 == 'E')
+			i = 4;
+		else if (s8[20].a1 == 'G')
+			i = 3;
+		else if (s8[20].a1 == 'A')
+			i = 2;
+		else if (s8[20].a1 == 'P')
+			i = 1;
+		else if (s8[20].a1 == 'U')
+			i = 0;
+
+		if (s9[20].a1 == 'E')
+			o = 4;
+		else if (s9[20].a1 == 'G')
+			o = 3;
+		else if (s9[20].a1 == 'A')
+			o = 2;
+		else if (s9[20].a1 == 'P')
+			o = 1;
+		else if (s9[20].a1 == 'U')
+			o = 0;
+
+		if (s10[20].a1 == 'E')
+			p = 4;
+		else if (s10[20].a1 == 'G')
+			p = 3;
+		else if (s10[20].a1 == 'A')
+			p = 2;
+		else if (s10[20].a1 == 'P')
+			p = 1;
+		else if (s10[20].a1 == 'U')
+			p = 0;
+
+		if (s11[20].a1 == 'E')
+			a = 4;
+		else if (s11[20].a1 == 'G')
+			a = 3;
+		else if (s11[20].a1 == 'A')
+			a = 2;
+		else if (s11[20].a1 == 'P')
+			a = 1;
+		else if (s11[20].a1 == 'U')
+			a = 0;
+
+		if (s12[20].a1 == 'E')
+			s = 4;
+		else if (s12[20].a1 == 'G')
+			s = 3;
+		else if (s12[20].a1 == 'A')
+			s = 2;
+		else if (s12[20].a1 == 'P')
+			s = 1;
+		else if (s12[20].a1 == 'U')
+			s = 0;
+
+		if (s13[20].a1 == 'E')
+			d = 4;
+		else if (s13[20].a1 == 'G')
+			d = 3;
+		else if (s13[20].a1 == 'A')
+			d = 2;
+		else if (s13[20].a1 == 'P')
+			d = 1;
+		else if (s13[20].a1 == 'U')
+			d = 0;
+
+		if (s14[20].a1 == 'E')
+			f = 4;
+		else if (s14[20].a1 == 'G')
+			f = 3;
+		else if (s14[20].a1 == 'A')
+			f = 2;
+		else if (s14[20].a1 == 'P')
+			f = 1;
+		else if (s14[20].a1 == 'U')
+			f = 0;
+
+		if (s15[20].a1 == 'E')
+			g = 4;
+		else if (s15[20].a1 == 'G')
+			g = 3;
+		else if (s15[20].a1 == 'A')
+			g = 2;
+		else if (s15[20].a1 == 'P')
+			g = 1;
+		else if (s15[20].a1 == 'U')
+			g = 0;
+
+		if (s16[20].a1 == 'E')
+			h = 4;
+		else if (s16[20].a1 == 'G')
+			h = 3;
+		else if (s16[20].a1 == 'A')
+			h = 2;
+		else if (s16[20].a1 == 'P')
+			h = 1;
+		else if (s16[20].a1 == 'U')
+			h = 0;
+
+		if (s17[20].a1 == 'E')
+			j = 4;
+		else if (s17[20].a1 == 'G')
+			j = 3;
+		else if (s17[20].a1 == 'A')
+			j = 2;
+		else if (s17[20].a1 == 'P')
+			j = 1;
+		else if (s17[20].a1 == 'U')
+			j = 0;
+
+		if (s18[20].a1 == 'E')
+			k = 4;
+		else if (s18[20].a1 == 'G')
+			k = 3;
+		else if (s18[20].a1 == 'A')
+			k = 2;
+		else if (s18[20].a1 == 'P')
+			k = 1;
+		else if (s18[20].a1 == 'U')
+			k = 0;
+
+		if (s19[20].a1 == 'E')
+			l = 4;
+		else if (s19[20].a1 == 'G')
+			l = 3;
+		else if (s19[20].a1 == 'A')
+			l = 2;
+		else if (s19[20].a1 == 'P')
+			l = 1;
+		else if (s19[20].a1 == 'U')
+			l = 0;
+
+		if (s20[20].a1 == 'E')
+			z = 4;
+		else if (s20[20].a1 == 'G')
+			z = 3;
+		else if (s20[20].a1 == 'A')
+			z = 2;
+		else if (s20[20].a1 == 'P')
+			z = 1;
+		else if (s20[20].a1 == 'U')
+			z = 0;
+
+	//sum and average of integer variables
+		double sum = q + w + e + r + t + y + u + i + o + p + a + s + d + f + g + h + j + k + l + z;
+		double average = sum / 20;
+		
+
+
+		//QUESTION 2
+		if (s1[20].a2 == 'E')
+			x = 4;
+		else if (s1[20].a2 == 'G')
+			x = 3;
+		else if (s1[20].a2 == 'A')
+			x = 2;
+		else if (s1[20].a2 == 'P')
+			x = 1;
+		else if (s1[20].a2 == 'U')
+			x = 0;
+
+		if (s2[20].a2 == 'E')
+			c = 4;
+		else if (s2[20].a2 == 'G')
+			c = 3;
+		else if (s2[20].a2 == 'A')
+			c = 2;
+		else if (s2[20].a2 == 'P')
+			c = 1;
+		else if (s2[20].a2 == 'c')
+			c = 0;
+
+		if (s3[20].a2 == 'E')
+			v= 4;
+		else if (s3[20].a2 == 'G')
+			v= 3;
+		else if (s3[20].a2 == 'A')
+			v= 2;
+		else if (s3[20].a2 == 'P')
+			v= 1;
+		else if (s3[20].a2 == 'U')
+			v= 0;
+
+		if (s4[20].a2 == 'E')
+			b = 4;
+		else if (s4[20].a2 == 'G')
+			b = 3;
+		else if (s4[20].a2 == 'A')
+			b = 2;
+		else if (s4[20].a2 == 'P')
+			b = 1;
+		else if (s4[20].a2 == 'U')
+			b = 0;
+
+		if (s5[20].a2 == 'E')
+			n = 4;
+		else if (s5[20].a2 == 'G')
+			n = 3;
+		else if (s5[20].a2 == 'A')
+			n = 2;
+		else if (s5[20].a2 == 'n')
+			n = 1;
+		else if (s5[20].a2 == 'U')
+			n = 0;
+
+		if (s6[20].a2 == 'E')
+			m = 4;
+		else if (s6[20].a2 == 'G')
+			m = 3;
+		else if (s6[20].a2 == 'A')
+			m = 2;
+		else if (s6[20].a2 == 'P')
+			m = 1;
+		else if (s6[20].a2 == 'U')
+			m = 0;
+
+		if (s7[20].a2 == 'E')
+			qq = 4;
+		else if (s7[20].a2 == 'G')
+			qq = 3;
+		else if (s7[20].a2 == 'A')
+			qq = 2;
+		else if (s7[20].a2 == 'P')
+			qq = 1;
+		else if (s7[20].a2 == 'U')
+			qq = 0;
+
+		if (s8[20].a2 == 'E')
+			ww= 4;
+		else if (s8[20].a2 == 'G')
+			ww= 3;
+		else if (s8[20].a2 == 'A')
+			ww= 2;
+		else if (s8[20].a2 == 'P')
+			ww= 1;
+		else if (s8[20].a2 == 'U')
+			ww= 0;
+
+		if (s9[20].a2 == 'E')
+			ee = 4;
+		else if (s9[20].a2 == 'G')
+			ee = 3;
+		else if (s9[20].a2 == 'A')
+			ee = 2;
+		else if (s9[20].a2 == 'P')
+			ee = 1;
+		else if (s9[20].a2 == 'U')
+			ee = 0;
+
+		if (s10[20].a2 == 'E')
+			rr = 4;
+		else if (s10[20].a2 == 'G')
+			rr = 3;
+		else if (s10[20].a2 == 'A')
+			rr = 2;
+		else if (s10[20].a2 == 'P')
+			rr = 1;
+		else if (s10[20].a2 == 'U')
+			rr = 0;
+
+		if (s11[20].a2 == 'E')
+			tt = 4;
+		else if (s11[20].a2 == 'G')
+			tt = 3;
+		else if (s11[20].a2 == 'A')
+			tt = 2;
+		else if (s11[20].a2 == 'P')
+			tt = 1;
+		else if (s11[20].a2 == 'U')
+			tt = 0;
+
+		if (s12[20].a2 == 'E')
+			yy = 4;
+		else if (s12[20].a2 == 'G')
+			yy = 3;
+		else if (s12[20].a2 == 'A')
+			yy = 2;
+		else if (s12[20].a2 == 'P')
+			yy = 1;
+		else if (s12[20].a2 == 'U')
+			yy = 0;
+
+		if (s13[20].a2 == 'E')
+			uu = 4;
+		else if (s13[20].a2 == 'G')
+			uu = 3;
+		else if (s13[20].a2 == 'A')
+			uu = 2;
+		else if (s13[20].a2 == 'P')
+			uu = 1;
+		else if (s13[20].a2 == 'U')
+			uu = 0;
+
+		if (s14[20].a2 == 'E')
+			ii = 4;
+		else if (s14[20].a2 == 'G')
+			ii = 3;
+		else if (s14[20].a2 == 'A')
+			ii = 2;
+		else if (s14[20].a2 == 'P')
+			ii = 1;
+		else if (s14[20].a2 == 'U')
+			ii = 0;
+
+		if (s15[20].a2 == 'E')
+			oo = 4;
+		else if (s15[20].a2 == 'G')
+			oo = 3;
+		else if (s15[20].a2 == 'A')
+			oo = 2;
+		else if (s15[20].a2 == 'P')
+			oo = 1;
+		else if (s15[20].a2 == 'U')
+			oo = 0;
+
+		if (s16[20].a2 == 'E')
+			pp = 4;
+		else if (s16[20].a2 == 'G')
+			pp = 3;
+		else if (s16[20].a2 == 'A')
+			pp = 2;
+		else if (s16[20].a2 == 'P')
+			pp = 1;
+		else if (s16[20].a2 == 'U')
+			pp = 0;
+
+		if (s17[20].a2 == 'E')
+			aa = 4;
+		else if (s17[20].a2 == 'G')
+			aa = 3;
+		else if (s17[20].a2 == 'A')
+			aa = 2;
+		else if (s17[20].a2 == 'P')
+			aa = 1;
+		else if (s17[20].a2 == 'U')
+			aa = 0;
+
+		if (s18[20].a2 == 'E')
+			ss = 4;
+		else if (s18[20].a2 == 'G')
+			ss = 3;
+		else if (s18[20].a2 == 'A')
+			ss = 2;
+		else if (s18[20].a2 == 'P')
+			ss = 1;
+		else if (s18[20].a2 == 'U')
+			ss = 0;
+
+		if (s19[20].a2 == 'E')
+			dd = 4;
+		else if (s19[20].a2 == 'G')
+			dd = 3;
+		else if (s19[20].a2 == 'A')
+			dd = 2;
+		else if (s19[20].a2 == 'P')
+			dd = 1;
+		else if (s19[20].a2 == 'U')
+			dd = 0;
+
+		if (s20[20].a2 == 'E')
+			ff = 4;
+		else if (s20[20].a2 == 'G')
+			ff = 3;
+		else if (s20[20].a2 == 'A')
+			ff = 2;
+		else if (s20[20].a2 == 'P')
+			ff = 1;
+		else if (s20[20].a2 == 'U')
+			ff = 0;
+
+		double sum1 = x + c + v + b + n + m + qq + ww + ee + rr + tt + yy + uu + ii + oo + pp + aa + ss + dd + ff;
+		double average1 = sum1 / 20;
+		
+
+
+		//QUESTION 3
+		if (s1[20].a3 == 'E')
+			gg = 4;
+		else if (s1[20].a3 == 'G')
+			gg = 3;
+		else if (s1[20].a3 == 'A')
+			gg = 2;
+		else if (s1[20].a3 == 'P')
+			gg = 1;
+		else if (s1[20].a3 == 'U')
+			gg = 0;
+
+		if (s2[20].a3 == 'E')
+			hh = 4;
+		else if (s2[20].a3 == 'G')
+			hh = 3;
+		else if (s2[20].a3 == 'A')
+			hh = 2;
+		else if (s2[20].a3 == 'P')
+			hh = 1;
+		else if (s2[20].a3 == 'U')
+			hh = 0;
+
+		if (s3[20].a3 == 'E')
+			jj = 4;
+		else if (s3[20].a3 == 'G')
+			jj = 3;
+		else if (s3[20].a3 == 'A')
+			jj = 2;
+		else if (s3[20].a3 == 'P')
+			jj = 1;
+		else if (s3[20].a3 == 'U')
+			jj = 0;
+
+		if (s4[20].a3 == 'E')
+			kk = 4;
+		else if (s4[20].a3 == 'G')
+			kk = 3;
+		else if (s4[20].a3 == 'A')
+			kk = 2;
+		else if (s4[20].a3 == 'P')
+			kk = 1;
+		else if (s4[20].a3 == 'U')
+			kk = 0;
+
+		if (s5[20].a3 == 'E')
+			ll = 4;
+		else if (s5[20].a3 == 'G')
+			ll = 3;
+		else if (s5[20].a3 == 'A')
+			ll = 2;
+		else if (s5[20].a3 == 'P')
+			ll = 1;
+		else if (s5[20].a3 == 'U')
+			ll = 0;
+
+		if (s6[20].a3 == 'E')
+			zz = 4;
+		else if (s6[20].a3 == 'G')
+			zz = 3;
+		else if (s6[20].a3 == 'A')
+			zz = 2;
+		else if (s6[20].a3 == 'P')
+			zz = 1;
+		else if (s6[20].a3 == 'U')
+			zz = 0;
+
+		if (s7[20].a3 == 'E')
+			xx = 4;
+		else if (s7[20].a3 == 'G')
+			xx = 3;
+		else if (s7[20].a3 == 'A')
+			xx = 2;
+		else if (s7[20].a3 == 'P')
+			xx = 1;
+		else if (s7[20].a3 == 'U')
+			xx = 0;
+
+		if (s8[20].a3 == 'E')
+			cc = 4;
+		else if (s8[20].a3 == 'G')
+			cc = 3;
+		else if (s8[20].a3 == 'A')
+			cc = 2;
+		else if (s8[20].a3 == 'P')
+			cc = 1;
+		else if (s8[20].a3 == 'U')
+			cc = 0;
+
+		if (s9[20].a3 == 'E')
+			vv = 4;
+		else if (s9[20].a3 == 'G')
+			vv = 3;
+		else if (s9[20].a3 == 'A')
+			vv = 2;
+		else if (s9[20].a3 == 'P')
+			vv = 1;
+		else if (s9[20].a3 == 'U')
+			vv = 0;
+
+		if (s10[20].a3 == 'E')
+			bb = 4;
+		else if (s10[20].a3 == 'G')
+			bb = 3;
+		else if (s10[20].a3 == 'A')
+			bb = 2;
+		else if (s10[20].a3 == 'P')
+			bb = 1;
+		else if (s10[20].a3 == 'U')
+			bb = 0;
+
+		if (s11[20].a3 == 'E')
+			nn = 4;
+		else if (s11[20].a3 == 'G')
+			nn = 3;
+		else if (s11[20].a3 == 'A')
+			nn = 2;
+		else if (s11[20].a3 == 'P')
+			nn = 1;
+		else if (s11[20].a3 == 'U')
+			nn = 0;
+
+		if (s12[20].a3 == 'E')
+			mm = 4;
+		else if (s12[20].a3 == 'G')
+			mm = 3;
+		else if (s12[20].a3 == 'A')
+			mm = 2;
+		else if (s12[20].a3 == 'P')
+			mm = 1;
+		else if (s12[20].a3 == 'U')
+			mm = 0;
+
+		if (s13[20].a3 == 'E')
+			qqq = 4;
+		else if (s13[20].a3 == 'G')
+			qqq = 3;
+		else if (s13[20].a3 == 'A')
+			qqq = 2;
+		else if (s13[20].a3 == 'P')
+			qqq = 1;
+		else if (s13[20].a3 == 'U')
+			qqq = 0;
+
+		if (s14[20].a3 == 'E')
+			www = 4;
+		else if (s14[20].a3 == 'G')
+			www = 3;
+		else if (s14[20].a3 == 'A')
+			www = 2;
+		else if (s14[20].a3 == 'P')
+			www = 1;
+		else if (s14[20].a3 == 'U')
+			www = 0;
+
+		if (s15[20].a3 == 'E')
+			eee = 4;
+		else if (s15[20].a3 == 'G')
+			eee = 3;
+		else if (s15[20].a3 == 'A')
+			eee = 2;
+		else if (s15[20].a3 == 'P')
+			eee = 1;
+		else if (s15[20].a3 == 'U')
+			eee = 0;
+
+		if (s16[20].a3 == 'E')
+			rrr = 4;
+		else if (s16[20].a3 == 'G')
+			rrr = 3;
+		else if (s16[20].a3 == 'A')
+			rrr = 2;
+		else if (s16[20].a3 == 'P')
+			rrr = 1;
+		else if (s16[20].a3 == 'U')
+			rrr = 0;
+
+		if (s17[20].a3 == 'E')
+			ttt = 4;
+		else if (s17[20].a3 == 'G')
+			ttt = 3;
+		else if (s17[20].a3 == 'A')
+			ttt = 2;
+		else if (s17[20].a3 == 'P')
+			ttt = 1;
+		else if (s17[20].a3 == 'U')
+			ttt = 0;
+
+		if (s18[20].a3 == 'E')
+			yyy = 4;
+		else if (s18[20].a3 == 'G')
+			yyy = 3;
+		else if (s18[20].a3 == 'A')
+			yyy = 2;
+		else if (s18[20].a3 == 'P')
+			yyy = 1;
+		else if (s18[20].a3 == 'U')
+			yyy = 0;
+
+		if (s19[20].a3 == 'E')
+			uuu = 4;
+		else if (s19[20].a3 == 'G')
+			uuu = 3;
+		else if (s19[20].a3 == 'A')
+			uuu = 2;
+		else if (s19[20].a3 == 'P')
+			uuu = 1;
+		else if (s19[20].a3 == 'U')
+			uuu = 0;
+
+		if (s20[20].a3 == 'E')
+			iii = 4;
+		else if (s20[20].a3 == 'G')
+			iii = 3;
+		else if (s20[20].a3 == 'A')
+			iii = 2;
+		else if (s20[20].a3 == 'P')
+			iii = 1;
+		else if (s20[20].a3 == 'U')
+			iii = 0;
+
+		double sum2 = gg + hh + jj + kk + ll + zz + xx + cc + vv + bb + nn + mm + qqq + www + eee + rrr + ttt + yyy + uuu + iii;
+		double average2 = sum2 / 20;
+		
+
+
+
+		//QUESTION 4
+		if (s1[20].a4 == 'E')
+			ooo = 4;
+		else if (s1[20].a4 == 'G')
+			ooo = 3;
+		else if (s1[20].a4 == 'A')
+			ooo = 2;
+		else if (s1[20].a4 == 'P')
+			ooo = 1;
+		else if (s1[20].a4 == 'U')
+			ooo = 0;
+
+		if (s2[20].a4 == 'E')
+			ppp = 4;
+		else if (s2[20].a4 == 'G')
+			ppp = 3;
+		else if (s2[20].a4 == 'A')
+			ppp = 2;
+		else if (s2[20].a4 == 'P')
+			ppp = 1;
+		else if (s2[20].a4 == 'U')
+			ppp = 0;
+
+		if (s3[20].a4 == 'E')
+			aaa = 4;
+		else if (s3[20].a4 == 'G')
+			aaa = 3;
+		else if (s3[20].a4 == 'A')
+			aaa = 2;
+		else if (s3[20].a4 == 'P')
+			aaa = 1;
+		else if (s3[20].a4 == 'U')
+			aaa = 0;
+
+		if (s4[20].a4 == 'E')
+			sss = 4;
+		else if (s4[20].a4 == 'G')
+			sss = 3;
+		else if (s4[20].a4 == 'A')
+			sss = 2;
+		else if (s4[20].a4 == 'P')
+			sss = 1;
+		else if (s4[20].a4 == 'U')
+			sss = 0;
+
+		if (s5[20].a4 == 'E')
+			ddd = 4;
+		else if (s5[20].a4 == 'G')
+			ddd = 3;
+		else if (s5[20].a4 == 'A')
+			ddd = 2;
+		else if (s5[20].a4 == 'P')
+			ddd = 1;
+		else if (s5[20].a4 == 'U')
+			ddd = 0;
+
+		if (s6[20].a4 == 'E')
+			fff = 4;
+		else if (s6[20].a4 == 'G')
+			fff = 3;
+		else if (s6[20].a4 == 'A')
+			fff = 2;
+		else if (s6[20].a4 == 'P')
+			fff = 1;
+		else if (s6[20].a4 == 'U')
+			fff = 0;
+
+		if (s7[20].a4 == 'E')
+			ggg = 4;
+		else if (s7[20].a4 == 'G')
+			ggg = 3;
+		else if (s7[20].a4 == 'A')
+			ggg = 2;
+		else if (s7[20].a4 == 'P')
+			ggg = 1;
+		else if (s7[20].a4 == 'U')
+			ggg = 0;
+
+		if (s8[20].a4 == 'E')
+			hhh = 4;
+		else if (s8[20].a4 == 'G')
+			hhh = 3;
+		else if (s8[20].a4 == 'A')
+			hhh = 2;
+		else if (s8[20].a4 == 'P')
+			hhh = 1;
+		else if (s8[20].a4 == 'U')
+			hhh = 0;
+
+		if (s9[20].a4 == 'E')
+			jjj = 4;
+		else if (s9[20].a4 == 'G')
+			jjj = 3;
+		else if (s9[20].a4 == 'A')
+			jjj = 2;
+		else if (s9[20].a4 == 'P')
+			jjj = 1;
+		else if (s9[20].a4 == 'U')
+			jjj = 0;
+
+		if (s10[20].a4 == 'E')
+			kkk = 4;
+		else if (s10[20].a4 == 'G')
+			kkk = 3;
+		else if (s10[20].a4 == 'A')
+			kkk = 2;
+		else if (s10[20].a4 == 'P')
+			kkk = 1;
+		else if (s10[20].a4 == 'U')
+			kkk = 0;
+
+		if (s11[20].a4 == 'E')
+			lll = 4;
+		else if (s11[20].a4 == 'G')
+			lll = 3;
+		else if (s11[20].a4 == 'A')
+			lll = 2;
+		else if (s11[20].a4 == 'P')
+			lll = 1;
+		else if (s11[20].a4 == 'U')
+			lll = 0;
+
+		if (s12[20].a4 == 'E')
+			zzz = 4;
+		else if (s12[20].a4 == 'G')
+			zzz = 3;
+		else if (s12[20].a4 == 'A')
+			zzz = 2;
+		else if (s12[20].a4 == 'P')
+			zzz = 1;
+		else if (s12[20].a4 == 'U')
+			zzz = 0;
+
+		if (s13[20].a4 == 'E')
+			xxx = 4;
+		else if (s13[20].a4 == 'G')
+			xxx = 3;
+		else if (s13[20].a4 == 'A')
+			xxx = 2;
+		else if (s13[20].a4 == 'P')
+			xxx = 1;
+		else if (s13[20].a4 == 'U')
+			xxx = 0;
+
+		if (s14[20].a4 == 'E')
+			ccc = 4;
+		else if (s14[20].a4 == 'G')
+			ccc = 3;
+		else if (s14[20].a4 == 'A')
+			ccc = 2;
+		else if (s14[20].a4 == 'P')
+			ccc = 1;
+		else if (s14[20].a4 == 'U')
+			ccc = 0;
+
+		if (s15[20].a4 == 'E')
+			vvv = 4;
+		else if (s15[20].a4 == 'G')
+			vvv = 3;
+		else if (s15[20].a4 == 'A')
+			vvv = 2;
+		else if (s15[20].a4 == 'P')
+			vvv = 1;
+		else if (s15[20].a4 == 'U')
+			vvv = 0;
+
+		if (s16[20].a4 == 'E')
+			bbb = 4;
+		else if (s16[20].a4 == 'G')
+			bbb = 3;
+		else if (s16[20].a4 == 'A')
+			bbb = 2;
+		else if (s16[20].a4 == 'P')
+			bbb = 1;
+		else if (s16[20].a4 == 'U')
+			bbb = 0;
+
+		if (s17[20].a4 == 'E')
+			nnn = 4;
+		else if (s17[20].a4 == 'G')
+			nnn = 3;
+		else if (s17[20].a4 == 'A')
+			nnn = 2;
+		else if (s17[20].a4 == 'P')
+			nnn = 1;
+		else if (s17[20].a4 == 'U')
+			nnn = 0;
+
+		if (s18[20].a4 == 'E')
+			mmm = 4;
+		else if (s18[20].a4 == 'G')
+			mmm = 3;
+		else if (s18[20].a4 == 'A')
+			mmm = 2;
+		else if (s18[20].a4 == 'P')
+			mmm = 1;
+		else if (s18[20].a4 == 'U')
+			mmm = 0;
+
+		if (s19[20].a4 == 'E')
+			qqqq = 4;
+		else if (s19[20].a4 == 'G')
+			qqqq = 3;
+		else if (s19[20].a4 == 'A')
+			qqqq = 2;
+		else if (s19[20].a4 == 'P')
+			qqqq = 1;
+		else if (s19[20].a4 == 'U')
+			qqqq = 0;
+
+		if (s20[20].a4 == 'E')
+			wwww = 4;
+		else if (s20[20].a4 == 'G')
+			wwww = 3;
+		else if (s20[20].a4 == 'A')
+			wwww = 2;
+		else if (s20[20].a4 == 'P')
+			wwww = 1;
+		else if (s20[20].a4 == 'U')
+			wwww = 0;
+
+		double sum3 = ooo + ppp + aaa + sss + ddd + fff + ggg + hhh + jjj + kkk + lll + zzz + xxx + ccc + vvv + bbb + nnn + mmm + qqqq + wwww;
+		double average3 = sum3 / 20;
+		
+
+
+
+		//QUESTION 5
+		if (s1[20].a5 == 'E')
+			eeee = 4;
+		else if (s1[20].a5 == 'G')
+			eeee = 3;
+		else if (s1[20].a5 == 'A')
+			eeee = 2;
+		else if (s1[20].a5 == 'P')
+			eeee = 1;
+		else if (s1[20].a5 == 'U')
+			eeee = 0;
+
+		if (s2[20].a5 == 'E')
+			rrrr = 4;
+		else if (s2[20].a5 == 'G')
+			rrrr = 3;
+		else if (s2[20].a5 == 'A')
+			rrrr = 2;
+		else if (s2[20].a5 == 'P')
+			rrrr = 1;
+		else if (s2[20].a5 == 'U')
+			rrrr = 0;
+
+		if (s3[20].a5 == 'E')
+			tttt = 4;
+		else if (s3[20].a5 == 'G')
+			tttt = 3;
+		else if (s3[20].a5 == 'A')
+			tttt = 2;
+		else if (s3[20].a5 == 'P')
+			tttt = 1;
+		else if (s3[20].a5 == 'U')
+			tttt = 0;
+
+		if (s4[20].a5 == 'E')
+			yyyy = 4;
+		else if (s4[20].a5 == 'G')
+			yyyy = 3;
+		else if (s4[20].a5 == 'A')
+			yyyy = 2;
+		else if (s4[20].a5 == 'P')
+			yyyy = 1;
+		else if (s4[20].a5 == 'U')
+			yyyy = 0;
+
+		if (s5[20].a5 == 'E')
+			uuuu = 4;
+		else if (s5[20].a5 == 'G')
+			uuuu = 3;
+		else if (s5[20].a5 == 'A')
+			uuuu = 2;
+		else if (s5[20].a5 == 'P')
+			uuuu = 1;
+		else if (s5[20].a5 == 'U')
+			uuuu = 0;
+
+		if (s6[20].a5 == 'E')
+			iiii = 4;
+		else if (s6[20].a5 == 'G')
+			iiii = 3;
+		else if (s6[20].a5 == 'A')
+			iiii = 2;
+		else if (s6[20].a5 == 'P')
+			iiii = 1;
+		else if (s6[20].a5 == 'U')
+			iiii = 0;
+
+		if (s7[20].a5 == 'E')
+			oooo = 4;
+		else if (s7[20].a5 == 'G')
+			oooo = 3;
+		else if (s7[20].a5 == 'A')
+			oooo = 2;
+		else if (s7[20].a5 == 'P')
+			oooo = 1;
+		else if (s7[20].a5 == 'U')
+			oooo = 0;
+
+		if (s8[20].a5 == 'E')
+			pppp = 4;
+		else if (s8[20].a5 == 'G')
+			pppp = 3;
+		else if (s8[20].a5 == 'A')
+			pppp = 2;
+		else if (s8[20].a5 == 'P')
+			pppp = 1;
+		else if (s8[20].a5 == 'U')
+			pppp = 0;
+
+		if (s9[20].a5 == 'E')
+			aaaa = 4;
+		else if (s9[20].a5 == 'G')
+			aaaa = 3;
+		else if (s9[20].a5 == 'A')
+			aaaa = 2;
+		else if (s9[20].a5 == 'P')
+			aaaa = 1;
+		else if (s9[20].a5 == 'U')
+			aaaa = 0;
+
+		if (s10[20].a5 == 'E')
+			ssss = 4;
+		else if (s10[20].a5 == 'G')
+			ssss = 3;
+		else if (s10[20].a5 == 'A')
+			ssss = 2;
+		else if (s10[20].a5 == 'P')
+			ssss = 1;
+		else if (s10[20].a5 == 'U')
+			ssss = 0;
+
+		if (s11[20].a5 == 'E')
+			dddd = 4;
+		else if (s11[20].a5 == 'G')
+			dddd = 3;
+		else if (s11[20].a5 == 'A')
+			dddd = 2;
+		else if (s11[20].a5 == 'P')
+			dddd = 1;
+		else if (s11[20].a5 == 'U')
+			dddd = 0;
+
+		if (s12[20].a5 == 'E')
+			ffff = 4;
+		else if (s12[20].a5 == 'G')
+			ffff = 3;
+		else if (s12[20].a5 == 'A')
+			ffff = 2;
+		else if (s12[20].a5 == 'P')
+			ffff = 1;
+		else if (s12[20].a5 == 'U')
+			ffff = 0;
+
+		if (s13[20].a5 == 'E')
+			gggg = 4;
+		else if (s13[20].a5 == 'G')
+			gggg = 3;
+		else if (s13[20].a5 == 'A')
+			gggg = 2;
+		else if (s13[20].a5 == 'P')
+			gggg = 1;
+		else if (s13[20].a5 == 'U')
+			gggg = 0;
+
+		if (s14[20].a5 == 'E')
+			hhhh = 4;
+		else if (s14[20].a5 == 'G')
+			hhhh = 3;
+		else if (s14[20].a5 == 'A')
+			hhhh = 2;
+		else if (s14[20].a5 == 'P')
+			hhhh = 1;
+		else if (s14[20].a5 == 'U')
+			hhhh = 0;
+
+		if (s15[20].a5 == 'E')
+			jjjj = 4;
+		else if (s15[20].a5 == 'G')
+			jjjj = 3;
+		else if (s15[20].a5 == 'A')
+			jjjj = 2;
+		else if (s15[20].a5 == 'P')
+			jjjj = 1;
+		else if (s15[20].a5 == 'U')
+			jjjj = 0;
+
+		if (s16[20].a5 == 'E')
+			kkkk = 4;
+		else if (s16[20].a5 == 'G')
+			kkkk = 3;
+		else if (s16[20].a5 == 'A')
+			kkkk = 2;
+		else if (s16[20].a5 == 'P')
+			kkkk = 1;
+		else if (s16[20].a5 == 'U')
+			kkkk = 0;
+
+		if (s17[20].a5 == 'E')
+			llll = 4;
+		else if (s17[20].a5 == 'G')
+			llll = 3;
+		else if (s17[20].a5 == 'A')
+			llll = 2;
+		else if (s17[20].a5 == 'P')
+			llll = 1;
+		else if (s17[20].a5 == 'U')
+			llll = 0;
+
+		if (s18[20].a5 == 'E')
+			zzzz = 4;
+		else if (s18[20].a5 == 'G')
+			zzzz = 3;
+		else if (s18[20].a5 == 'A')
+			zzzz = 2;
+		else if (s18[20].a5 == 'P')
+			zzzz = 1;
+		else if (s18[20].a5 == 'U')
+			zzzz = 0;
+
+		if (s19[20].a5 == 'E')
+			xxxx = 4;
+		else if (s19[20].a5 == 'G')
+			xxxx = 3;
+		else if (s19[20].a5 == 'A')
+			xxxx = 2;
+		else if (s19[20].a5 == 'P')
+			xxxx = 1;
+		else if (s19[20].a5 == 'U')
+			xxxx = 0;
+
+		if (s20[20].a5 == 'E')
+			cccc = 4;
+		else if (s20[20].a5 == 'G')
+			cccc = 3;
+		else if (s20[20].a5 == 'A')
+			cccc = 2;
+		else if (s20[20].a5 == 'P')
+			cccc = 1;
+		else if (s20[20].a5 == 'U')
+			cccc = 0;
+
+		double sum4 = eeee + rrrr + tttt + yyyy + uuuu + iiii + oooo + pppp + aaaa + ssss + dddd + ffff + gggg + hhhh + jjjj + kkkk + llll + zzzz + xxxx + cccc;
+		double average4 = sum4 / 20;
+
+
+
+
+		//instructor_average = 0.15 x average_of_Q1 + 0.23 x  average_of_Q2 + 0.08 X average_of_Q3 + 0.32 X average_of_Q4 + 0.22 x average_of_Q5
+		double insaverage = 0.15*average + 0.23*average1 + 0.08*average2 + 0.32*average3 + 0.22*average4;
+
+
+		
+		//DISPLAY WITH BEEPS AND 1 SEC DELAY
+		cout << "*COURSE / INSTRUCTOR EVALUATION SUMMARY*" << endl << endl << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "INSTRUCTOR NUMBER :" << " " << s1[20].insid << endl << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "COURSE NUMBER :" << " " << s1[20].course << endl << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "NUMBER OF PARTICIPANTS :" << " " << liness() << endl << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "AVERAGES :\n\n";
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "QUESTION 1 :"<<" "<< average << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "QUESTION 2 :" << " " << average1 << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "QUESTION 3 :" << " " << average2 << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "QUESTION 4 :" << " " << average3 << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "QUESTION 5 :" << " " << average4 << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+		cout << "INSTRUCTOR AVERAGE :" << " " << insaverage << endl << endl << endl;
+		Beep(1000, 1000);
+		Sleep(500);
+
+		
+		//prompt user if they wanna see the text list in inputfile
+		cout << "Do you wanna see the list ?"<<endl;
+		char rep;
+		cin >> rep;
+		if (rep == 'Y' || rep == 'y') {
+			cout << s1[20].insid <<" " <<s1[20].course << " "<< s1[20].a1 << " "<< s1[20].a2 << " "<< s1[20].a3 << " "<< s1[20].a4 << " "<< s1[20].a5 << endl;
+			cout << s2[20].insid << " "<< s2[20].course << " "<< s2[20].a1 << " " <<s2[20].a2 << " "<< s2[20].a3 << " "<< s2[20].a4 << " "<< s2[20].a5 << endl;
+			cout << s3[20].insid <<" "<< s3[20].course << " "<< s3[20].a1 << " "<< s3[20].a2 << " "<< s3[20].a3 << " "<< s3[20].a4 << " "<< s3[20].a5 << endl;
+			cout << s4[20].insid <<" " <<s5[20].course <<" "<< s5[20].a1 << " "<<s5[20].a2 <<" " <<s5[20].a3 <<" " <<s5[20].a4 <<" "<< s5[20].a5 << endl;
+
+
+			cout << s6[20].insid <<" "<< s7[20].course <<" " <<s7[20].a1 <<" "<< s7[20].a2 << " "<<s7[20].a3 <<" " <<s7[20].a4 <<" "<< s7[20].a5 << endl;
+			cout << s8[20].insid <<" "<< s8[20].course <<" "<< s8[20].a1 <<" " <<s8[20].a2 <<" "<< s8[20].a3 <<" "<<s8[20].a4 << " "<<s8[20].a5 << endl;
+			cout << s9[20].insid <<" "<< s9[20].course <<" "<< s9[20].a1 << " "<<s9[20].a2 << " "<<s9[20].a3 <<" "<< s9[20].a4 <<" "<< s9[20].a5 << endl;
+			cout << s10[20].insid <<" "<< s10[20].course <<" "<< s10[20].a1<< " "<< s10[20].a2 << " "<<s10[20].a3 <<" " <<s10[20].a4 <<" "<< s10[20].a5 << endl;
+
+
+			cout << s11[20].insid <<" " <<s11[20].course <<" "<< s11[20].a1 <<" "<< s11[20].a2 <<" " <<s11[20].a3 <<" " <<s11[20].a4 <<" " <<s11[20].a5 << endl;
+			cout << s12[20].insid <<" "<< s12[20].course << " "<<s12[20].a1 <<" "<< s12[20].a2 << " "<<s12[20].a3 <<" " <<s12[20].a4 <<" "<< s12[20].a5 << endl;
+			cout << s13[20].insid <<" " <<s13[20].course <<" "<< s13[20].a1 <<" "<< s13[20].a2 << " "<<s13[20].a3 <<" "<< s13[20].a4 <<" "<< s13[20].a5 << endl;
+			cout << s14[20].insid <<" " <<s14[20].course <<" " <<s14[20].a1 <<" "<< s14[20].a2 <<" "<< s14[20].a3 <<" "<<s14[20].a4 <<" " <<s14[20].a5 << endl;
+			cout << s15[20].insid <<" " <<s15[20].course <<" "<< s15[20].a1 <<" "<< s15[20].a2 << " "<<s15[20].a3 <<" "<< s15[20].a4 <<" "<< s15[20].a5 << endl;
+
+
+			cout << s16[20].insid <<" " <<s16[20].course <<" " <<s16[20].a1 <<" "<< s16[20].a2 << " "<<s16[20].a3 <<" " <<s16[20].a4 <<" " <<s16[20].a5 << endl;
+			cout << s17[20].insid <<" "<< s17[20].course <<" "<< s17[20].a1 <<" "<< s17[20].a2 << " "<<s17[20].a3 <<" "<< s17[20].a4 <<" " <<s17[20].a5 << endl;
+			cout << s18[20].insid <<" "<< s18[20].course <<" "<< s18[20].a1 <<" "<< s18[20].a2 <<" " <<s18[20].a3 <<" " <<s18[20].a4 <<" "<< s18[20].a5 << endl;
+			cout << s19[20].insid <<" "<< s19[20].course <<" " <<s19[20].a1 <<" "<< s19[20].a2 << " "<<s19[20].a3 <<" " <<s19[20].a4 <<" " <<s19[20].a5 << endl;
+			cout << s20[20].insid <<" "<< s20[20].course << " "<<s20[20].a1 <<" "<< s20[20].a2 <<" " <<s20[20].a3 <<" "<< s20[20].a4 <<" "<< s20[20].a5 << endl;
+		}
+
+		else if (rep == 'N' || rep == 'n') {
+			cout << "Love your confidence my man" << endl << endl;
+		}
+		
+
+
+		//prompt user asking whether wanna save the file into the output file
+		char res;
+		cout << "DO YOU WANNA SAVE THIS FILE ?" << endl;
+		cin >> res;
+		
+		if (res == 'Y' || res == 'y') {
+			ofstream myfile;
+			myfile.open("k.txt");
+			myfile << "*COURSE / INSTRUCTOR EVALUATION SUMMARY*" << endl << endl << endl << "INSTRUCTOR NUMBER :" << 
+				" " << s1[20].insid << endl << endl << "COURSE NUMBER :" << " " << s1[20].course << endl << endl << 
+				"NUMBER OF PARTICIPANTS :" << 	liness() << endl << endl << "AVERAGES :\n\n" << "QUESTION 1 :" << 
+				" " << average << endl << "QUESTION 2 :" << " " << average1 << endl
+				<< "QUESTION 3 :" << " " << average2 << endl
+				<< "QUESTION 4 :" << " " << average3 << endl
+				<< "QUESTION 5 :" << " " << average4 << endl
+				<< "INSTRUCTOR AVERAGE :" << " " << insaverage << endl;
+			myfile.close();
+		}
+
+		
+		//program clears with three beeps
+		else if (res == 'N' || res == 'n') {
+			cout << "Thank You...Have a pleasent day ahead" << endl;
+			Sleep(1000);
+			for (int vb = 0; vb < 3; vb++) {
+				Beep(800, 800);
+			}
+
+			system("cls");
+		}
+		
+		}
+
+		
+
+
+		
+
+
+
+		
+
+		
+		
+	
+
+
+
+
+
