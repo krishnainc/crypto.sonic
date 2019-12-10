@@ -1,4 +1,4 @@
-// Project.cpp 
+// Project.cpp : Defines the entry point for the console application.
 // by Crypto Sonic
 
 #include "stdafx.h"
@@ -8,48 +8,98 @@
 #include <windows.h>
 using namespace std;
 
-//function to hold minor displays
-void display(int insid,int course)
-{
-	cout <<endl<<endl<< "INSTRUCTOR NUMBER :" << insid << endl;
+
+
+//function to hold all the average calculations
+double average1(double count,double rows){
+	double sum = count / rows;
+	return sum;
+}
+
+double average2(double count1, double rows) {
+	double sum1 = count1 / rows;
+	return sum1;
+}
+
+double average3(double count2, double rows) {
+	double sum2 = count2 / rows;
+	return sum2;
+}
+
+double average4(double count3, double rows) {
+	double sum3 = count3 / rows;
+	return sum3;
+}
+
+double average5(double count4, double rows) {
+	double sum4 = count4 / rows;
+	return sum4;
+}
+
+//function to hold instructor average calculation
+double insaverage(double sum, double sum1,double sum2,double sum3,double sum4,double rows){
+	int q = average1(sum, rows);
+	int w = average2(sum1, rows);
+	int e = average3(sum2, rows);
+	int r = average4(sum3, rows);
+	int t = average5(sum4, rows);
+	return( 0.15 *q + 0.23 *w + 0.08 *e + 0.32 *r + 0.22 *t);
+	
+}
+
+//function to display and save prompt
+void display(int insid,int course,double sum,double sum1,double sum2,double sum3,double sum4,double rows) {
+	cout << "COURSE/INSTRUCTOR EVALUATION SUMMARY " << endl << endl;
 	Beep(1000, 1000);
 	Sleep(500);
-	cout << "COURSE NUMBER :" << course << endl;
+	cout << "INSTRUCTOR NUMBER :" << insid << endl;
+	Beep(1000, 1000);
+	Sleep(500);
+	cout << "COURSE NUMBER :" << course << endl << endl;
 	Beep(1000, 1000);
 	Sleep(500);
 	cout << "AVERAGES :" << endl << endl;
 	Beep(1000, 1000);
 	Sleep(500);
-}
+	cout << "QUESTION 1 :" << average1(sum, rows) << endl;
+	Beep(1000, 1000);
+	Sleep(500);
+	cout << "QUESTION 2 :" << average2(sum1, rows) << endl;
+	Beep(1000, 1000);
+	Sleep(500);
+	cout << "QUESTION 3 :" << average3(sum2, rows) << endl;
+	Beep(1000, 1000);
+	Sleep(500);
+	cout << "QUESTION 4 :" << average4(sum3, rows) << endl;
+	Beep(1000, 1000);
+	Sleep(500);
+	cout << "QUESTION 5 :" << average5(sum4, rows) << endl << endl;
+	Beep(1000, 1000);
+	Sleep(500);
+	cout << "INSTRUCTOR AVERAGE :" << insaverage(sum, sum1, sum2, sum3, sum4, rows) << endl << endl;
+	Beep(1000, 1000);
+	Sleep(500);
 
-//function to hold calculations and major displays
-void average(double count, double count1, double count2, double count3, double count4,double rows) 
-{
-	double sum = count / rows;
-	double sum1 = count1 / rows;
-	double sum2 = count2 / rows;
-	double sum3 = count3 / rows;
-	double sum4 = count4 / rows;
-	double inss = 0.15*sum + 0.23*sum1 + 0.08*sum2 + 0.32*sum3 + 0.22*sum4;
+	cout << "Do you wanna Save this file ?" << endl;
+	char rep;
+	cin >> rep;
+	if (rep == 'Y' || rep == 'y') {
+		ofstream hahaha;
+		hahaha.open("j.txt");
+		hahaha<< "COURSE/INSTRUCTOR EVALUATION SUMMARY " << endl << endl << "INSTRUCTOR NUMBER :" << insid 
+		<< endl << "COURSE NUMBER :" << course << endl <<endl<< "AVERAGES :" << endl << endl << "QUESTION 1 :" 
+		<< average1(sum, rows) << endl << "QUESTION 2 :" << average2(sum1, rows) << endl << "QUESTION 3 :" 
+		<< average3(sum2, rows) << endl << "QUESTION 4 :" << average4(sum3, rows) << endl << "QUESTION 5 :"
+		<< average5(sum4, rows) << endl << endl << "INSTRUCTOR AVERAGE :" << insaverage(sum, sum1, sum2, sum3, sum4, rows) << endl;
 
-	cout << "QUESTION 1 :" << " " << sum << endl;
-	Beep(1000, 1000);
-	Sleep(500);
-	cout << "QUESTION 2 :" << " " << sum1 << endl;
-	Beep(1000, 1000);
-	Sleep(500);
-	cout << "QUESTION 3 :" << " " << sum2 << endl;
-	Beep(1000, 1000);
-	Sleep(500);
-	cout << "QUESTION 4 :" << " " << sum3 << endl;
-	Beep(1000, 1000);
-	Sleep(500);
-	cout << "QUESTION 5 :" << " " << sum4 << endl;
-	Beep(1000, 1000);
-	Sleep(500);
-	cout << "INSTRUCTOR AVERAGE :" << inss << endl;
-	Beep(1000, 1000);
-	Sleep(500);
+		cout << "DONE !" << endl;
+	}
+
+	else if (rep == 'N' || rep == 'n') {
+		cout <<endl<< "This file is not saved...So dont get angry if you dont find it" << endl;
+	}
+	
+
 }
 
 int main()
@@ -76,11 +126,14 @@ int main()
 	//loop iteration for data insertion
     for (int i = 0; i < rows; i++) {
 
-		cout << "Enter Instructor ID :" << endl;
+		cout << endl << "Enter Instructor ID :" << " ";
 		cin >> insid;
 		
-		cout << "Enter Course ID :" << endl;
+		cout << endl << "Enter Course ID :" << " ";
 		cin >> course;
+
+		cout <<endl<<endl<< "Response to each question may be excellent (E), good (G), average (A), poor (P) or unsatisfactory (U). " << endl << endl;
+		
 
 		cout << "Enter Answer 1 :" << endl;
 		cin >> rep1;
@@ -185,13 +238,14 @@ int main()
 		myfile << insid <<" "<< course<<" "<< rep1 <<" "<< rep2 << " "<< rep3 <<" "<< rep4 <<" "<<rep5<< endl;
 }
         //prompt user telling that file is saved
-        cout << "Your Input Data is Saved in File...Please Check Your Directory" << endl;
-        Beep(1000, 1000);
-        Sleep(500);
+        cout <<endl<< "Your Input Data is Saved in File...Please Check Your Directory" << endl<<endl;
+        Beep(500, 500);
+        Sleep(1000);
 
 		//function call to display all the elements
-        display(insid,course);
-	    average(count, count1, count2, count3, count4, rows);
+		
+		 display(insid,course,count,count1,count2,count3,count4,rows);
+	    
 
 		//prompt user if they wanna view the input data
 	    cout <<endl<<endl<< "Do You Wanna View the Input List ?" << endl;
@@ -214,4 +268,6 @@ int main()
 	    }
 	    return 0;
 }
+
+
 
